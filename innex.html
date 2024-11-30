@@ -56,51 +56,69 @@
 			</div>
 			<div class="row" id="row">
 				<script>
-					// Функция для создания элемента блока книги
-					function createBookBlock(imgSrc, age, name, author) {
-					  const block = document.createElement('div');
-					  block.classList.add('block');
-				
-					  const img = document.createElement('img');
-					  img.src = imgSrc;
-					  img.alt = name;
-					  block.appendChild(img);
-				
-					  const ageP = document.createElement('p');
-					  ageP.textContent = age;
-					  block.appendChild(ageP);
-				
-					  const h3 = document.createElement('h3');
-					  h3.textContent = name;
-					  block.appendChild(h3);
-				
-					  const authorP = document.createElement('p');
-					  authorP.textContent = author;
-					  block.appendChild(authorP);
-				
-					  const button = document.createElement('button');
-					  button.textContent = 'Купить книгу';
-					  block.appendChild(button);
-				
-					  return block;
-					}
-				
-					// Получение элемента "row"
-					const rowElement = document.getElementById('row');
-				
-					// Создание блоков для книг и добавление их в "row"
-					rowElement.appendChild(createBookBlock('foto\\kurok.jpg', '+18', 'Курок', 'Пенелопа Дуглас'));
-					rowElement.appendChild(createBookBlock('foto\\kn3.png', '+18', 'Бездушный', 'Л.ДЖ.ШЭН'));
-					rowElement.appendChild(createBookBlock('foto\\kn1.png', '+18', 'Грешник', 'Эмма Скотт'));
-					rowElement.appendChild(createBookBlock('foto\\kn2.png', '+18', 'Случится чудо', 'Л.ДЖ.Шэн'));
-					rowElement.appendChild(createBookBlock('foto\\kniga11.png', '+18', 'Желание', 'Трейси Вульф'));
-					rowElement.appendChild(createBookBlock('foto\\kniga4.png', '+18', 'Тень и искры', 'Дженнифер Арментроун'));
-					rowElement.appendChild(createBookBlock('foto\\kniga5.png', '+18', 'Сгорая до тла', 'Эмма Скотт'));
-					rowElement.appendChild(createBookBlock('foto\\kniga6.png', '+18', 'Будь моей Брейшо', 'Меган Бренд'));
-				
-				  </script>
-				
-			</div>
+				  // Функция для создания элемента блока книги
+				  function createBookBlock(imgSrc, age, name, author) {
+					const block = document.createElement('div');
+					block.classList.add('block');
+			  
+					const img = document.createElement('img');
+					img.src = imgSrc;
+					img.alt = name;
+					block.appendChild(img);
+			  
+					const ageP = document.createElement('p');
+					ageP.textContent = age;
+					block.appendChild(ageP);
+			  
+					const h3 = document.createElement('h3');
+					h3.textContent = name;
+					block.appendChild(h3);
+			  
+					const authorP = document.createElement('p');
+					authorP.textContent = author;
+					block.appendChild(authorP);
+			  
+					const buyButton = document.createElement('button');
+					buyButton.textContent = 'Купить книгу';
+					buyButton.classList.add('but');
+					buyButton.addEventListener('click', () => {
+					window.location.href = 'form.html';
+					});
+					block.appendChild(buyButton);
+
+					const favButton = document.createElement('button');
+					favButton.classList.add('isbr-button');
+					const favIcon = document.createElement('img');
+					favIcon.src = 'foto/isbr.png';
+					favIcon.classList.add('isbr-icon');
+					favButton.appendChild(favIcon);
+					const favLink = document.createElement('a');
+					favLink.href = 'form.html';
+					favLink.appendChild(favIcon);
+					favButton.appendChild(favLink);
+					block.appendChild(favButton);
+					return block;
+
+
+				  }
+			  
+				  // Получение элемента "row"
+				  const rowElement = document.getElementById('row');
+			  
+				  // Создание блоков для книг и добавление их в "row"
+				  rowElement.appendChild(createBookBlock('foto\\kurok.jpg', '+18', 'Курок', 'Пенелопа Дуглас'));
+				  rowElement.appendChild(createBookBlock('foto\\kn3.png', '+18', 'Бездушный', 'Л.ДЖ.ШЭН'));
+				  rowElement.appendChild(createBookBlock('foto\\kn1.png', '+18', 'Грешник', 'Эмма Скотт'));
+				  rowElement.appendChild(createBookBlock('foto\\kn2.png', '+18', 'Случится чудо', 'Л.ДЖ.Шэн'));
+				  rowElement.appendChild(createBookBlock('foto\\kniga11.png', '+18', 'Желание', 'Трейси Вульф'));
+				  rowElement.appendChild(createBookBlock('foto\\kniga4.png', '+18', 'Тень и искры', 'Дженнифер Арм.'));
+				  rowElement.appendChild(createBookBlock('foto\\kniga5.png', '+18', 'Сгорая до тла', 'Эмма Скотт'));
+				  rowElement.appendChild(createBookBlock('foto\\kniga6.png', '+18', 'Будь моей Брейшо', 'Меган Бренд'));
+			  
+				</script>
+			  
+			  </div>
+			  
 			</div>
 		</div>
     
@@ -112,7 +130,7 @@
 				</h1>
 			</div>
 			<div class="aboutText">
-				<p><span class="boldWord">Booktok</span> осуществляет доставку  по России осуществляется через Boxberry, Почту России и Dostavista.
+				<p><span class="boldWord">DuckBook</span> осуществляет доставку  по России осуществляется через Boxberry, Почту России и Dostavista.
 				  Международные заказы отправляем почтой и DHL (по всему миру).<br>Заказ собирают и передают на доставку в течении 2 рабочих дней после 
 					оформления и оплаты заказа. В дни рассылки предзаказов срок может быть увеличен. Заказы, сделанные в пятницу, мы передаем на отправку в понедельник.
 					<br>Доставьте себе удовольствие от прочтения своих любимых книг!</p>

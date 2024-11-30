@@ -102,7 +102,6 @@ header {
 
 .big_name {
   font-size: 56px;
-  text-transform: uppercase;
   color:rgb(250, 242, 242);
 }
 label{
@@ -268,8 +267,8 @@ label{
   text-align: center;
 }
 img {
-  max-width: 150px;
-  max-height: 200px;
+  max-width: 200px;
+  max-height: 266px;
 }
 .row {
   display: -webkit-box;
@@ -338,6 +337,7 @@ img {
           justify-content: space-evenly;
   width: 88%;
   background-color: #262626;
+  
   height: 30%;
   border-radius: 20px;
   margin-top: 10px;
@@ -372,6 +372,35 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.block .but {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 24px;
+  color: #262626;
+  height: 30px;
+  background-color: #e2e3e9;
+}
+
+.block .isbr-button {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 24px;
+  color: #262626;
+  border: none;
+  cursor: pointer;
+  background-color: #e2e3e9;
+}
+
+.block p {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 24px;
+  color: #262626;
+}
+
+.block h3 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 24px;
+  color: #262626;
 }
 
 .buyBotton > a {
@@ -428,6 +457,8 @@ img {
   height: 60px;
   background-color: #262626;
 }
+
+
 
 /*-----------------FOOTER-----------------------------*/
 .content {

@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
    <block>
-      <img>foto\kurok.jpg</img>
+      <img src="foto\kurok.jpg" alt="Курок">
       <age>+18</age>
       <name> Курок </name>
-      <author> Пенелопа Дуглас</author>
+      <author class="blaut"> Пенелопа Дуглас</author>
       <button>Купить книгу</button>
+      <button class="isbr-button">
+         <img src="foto/isbr.png" alt="Профиль" class="isbr-icon">
+      </button>
    </block>
+
    <block>
       <img>foto\kn3.png</img>
        <age>+18</age>
@@ -14,6 +18,7 @@
       <author> Л.ДЖ.ШЭН </author>
       <button>Купить книгу</button>
    </block>
+
    <block>
       <img>foto\kn1.png</img>
        <age>+18</age>
@@ -21,6 +26,7 @@
       <author> Эмма Скотт </author>
       <button>Купить книгу</button>
    </block>
+
    <block>
       <img>foto\kn2.png</img>
        <age>+18</age>
@@ -28,6 +34,7 @@
       <author> Л.ДЖ.Шэн</author>
       <button>Купить книгу</button>
    </block>
+
    <block>
       <img>foto\kniga11.png</img>
        <age>+18</age>
@@ -35,13 +42,15 @@
       <author>Трейси Вульф </author>
       <button>Купить книгу</button>
    </block>
+
    <block>
       <img>foto\kniga4.png</img>
        <age>+18</age>
       <name> Тень и искры </name>
-      <author> Дженнифер Арментроун </author>
+      <author> Дженнифер Арм. </author>
       <button>Купить книгу</button>
    </block>
+
      <block>
       <img>foto\kniga5.png</img>
        <age>+18</age>
@@ -49,6 +58,7 @@
       <author> Эмма Скотт </author>
       <button>Купить книгу</button>
    </block>
+
      <block>
       <img>foto\kniga6.png</img>
        <age>+18</age>
