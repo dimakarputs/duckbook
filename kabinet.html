@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>DuckBook</title>
-  <link rel="stylesheet" href="glavnay_menu.css">
+  <link rel="stylesheet" href="kabinet.css">
 	<link rel="shortcut icon" href="foto\favicon.ico" type="image/x-icon">
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
@@ -49,78 +49,77 @@
 		  
 	  
 		
-    <!----------------------------------НОВИНКИ----------------------------------->
-		<div class="nov">
-			<div class="items_head">
-				<p class="items_name">Новинки</p>
-			</div>
-			<div class="row" id="row">
-				<script>
-				  // Функция для создания элемента блока книги
-				  function createBookBlock(imgSrc, age, name, author) {
-					const block = document.createElement('div');
-					block.classList.add('block');
-			  
-					const img = document.createElement('img');
-					img.src = imgSrc;
-					img.alt = name;
-					block.appendChild(img);
-			  
-					const ageP = document.createElement('p');
-					ageP.textContent = age;
-					block.appendChild(ageP);
-			  
-					const h3 = document.createElement('h3');
-					h3.textContent = name;
-					block.appendChild(h3);
-			  
-					const authorP = document.createElement('p');
-					authorP.textContent = author;
-					block.appendChild(authorP);
-			  
-					const buyButton = document.createElement('button');
-					buyButton.textContent = 'Купить книгу';
-					buyButton.classList.add('but');
-					buyButton.addEventListener('click', () => {
-					window.location.href = 'form.html';
-					});
-					block.appendChild(buyButton);
+    <!----------------------------------ИНФОРМАЦИЯ----------------------------------->
+    
+    <div class="container">
+        <div class="row">
 
-					const favButton = document.createElement('button');
-					favButton.classList.add('isbr-button');
-					const favIcon = document.createElement('img');
-					favIcon.src = 'foto/isbr.png';
-					favIcon.classList.add('isbr-icon');
-					favButton.appendChild(favIcon);
-					const favLink = document.createElement('a');
-					favLink.href = 'form.html';
-					favLink.appendChild(favIcon);
-					favButton.appendChild(favLink);
-					block.appendChild(favButton);
-					return block;
+        <div class="block">
+            <button class="block-button">
+                <div class="our-team">
+                    <div class="picture">
+                        <img class="img-fluid" src="foto\profile1.png">
+                    </div>
+                    <div class="team-content">
+                        <h3 class="name">О вас</h3>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="block">
+            <button class="block-button">
+                <div class="our-team">
+                    <div class="picture">
+                        <img class="img-fluid" src="foto\isbr1.png">
+                    </div>
+                    <div class="team-content">
+                        <h3 class="name">Избранное</h3>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="block">
+            <button class="block-button">
+                <div class="our-team">
+                    <div class="picture">
+                        <img class="img-fluid" src="foto\sumka.png">
+                    </div>
+                    <div class="team-content">
+                        <h3 class="name">Покупки</h3>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+          <div class="block">
+            <button class="block-button">
+                <div class="our-team">
+                    <div class="picture">
+                        <img class="img-fluid" src="foto\duckbook.jpg">
+                    </div>
+                    <div class="team-content">
+                        <h3 class="name">Помощь</h3>
+                    </div>
+                </div>
+            </button>
+        </div>
+      </div>
+
+      <div class="modal">
+        <div class="modal-content">
+          <p>По всем вопросам вы можете обратиться на почтовый ящик DuckBook@gmail.com.
+			<br>Наша служба поддержки обязательно ответит вам в течении суток.
+		  </p>
+          <button class="close-modal-btn">Закрыть</button>
+        </div>
+      </div>
 
 
-				  }
-			  
-				  // Получение элемента "row"
-				  const rowElement = document.getElementById('row');
-			  
-				  // Создание блоков для книг и добавление их в "row"
-				  rowElement.appendChild(createBookBlock('foto\\kurok.jpg', '+18', 'Курок', 'Пенелопа Дуглас'));
-				  rowElement.appendChild(createBookBlock('foto\\kn3.png', '+18', 'Бездушный', 'Л.ДЖ.ШЭН'));
-				  rowElement.appendChild(createBookBlock('foto\\kn1.png', '+18', 'Грешник', 'Эмма Скотт'));
-				  rowElement.appendChild(createBookBlock('foto\\kn2.png', '+18', 'Случится чудо', 'Л.ДЖ.Шэн'));
-				  rowElement.appendChild(createBookBlock('foto\\kniga11.png', '+18', 'Желание', 'Трейси Вульф'));
-				  rowElement.appendChild(createBookBlock('foto\\kniga4.png', '+18', 'Тень и искры', 'Дженнифер Арм.'));
-				  rowElement.appendChild(createBookBlock('foto\\kniga5.png', '+18', 'Сгорая до тла', 'Эмма Скотт'));
-				  rowElement.appendChild(createBookBlock('foto\\kniga6.png', '+18', 'Будь моей Брейшо', 'Меган Бренд'));
-			  
-				</script>
-			  
-			  </div>
-			  
-			</div>
-		</div>
+      <script src="kabinet.js"></script>
+
+
     
 		<!------------------------------------ДОСТАВКА------------------------------->
 		<div class="aboutService">
