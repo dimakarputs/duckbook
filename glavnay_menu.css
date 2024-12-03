@@ -263,6 +263,7 @@ label{
   display: inline-block;
   margin: 10px;
   border: 1px solid #ccc;
+  border-radius: 10px;
   padding: 10px;
   text-align: center;
 }
@@ -425,6 +426,25 @@ img {
 }
 
 /*-----------------ABOUT-----------------------------*/
+.items_head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100px;
+  font-family: 'Times New Roman', Times, serif;
+  border-radius: 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #f3eee7;
+  width: 100%;
+}
+
 .aboutService {
   z-index: 1;
   position: relative;
@@ -433,6 +453,7 @@ img {
   background-color:#262626;
   margin: 40px auto;
   border-radius: 50px;
+  padding-bottom: 5px; 
 }
 
 .aboutText {

@@ -239,27 +239,43 @@ header {
   margin-bottom: 5vh;
 }
 
-.items_head {
-  z-index: 11;
-  margin: auto;
-  width: 100%;
-  background-color: #262626;
-}
-
 .items_name {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 60px;
+  height: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 28px;
+  font-size: 30px;
   text-transform: uppercase;
-  color: #f8f8f8;
+  color: #f3eee7;
+  padding: 15px 0;
+}
+
+.items_head {
+  z-index: 11;
+  margin: auto;
+  background-color: #262626;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100px;
+  font-family: 'Times New Roman', Times, serif;
+  border-radius: 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #f3eee7;
+  width: 100%;
 }
 
 .cinemas {
@@ -449,7 +465,7 @@ header {
     font-size: 32px;
   }
   .items_name {
-    font-size: 46px;
+    font-size: 30px;
   }
   footer {
     font-size: 32px;
