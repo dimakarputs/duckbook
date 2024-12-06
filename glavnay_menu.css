@@ -381,6 +381,7 @@ img {
   color: #262626;
   height: 30px;
   background-color: #e2e3e9;
+  border-radius: 5px;
 }
 
 .block .isbr-button {
@@ -390,6 +391,7 @@ img {
   border: none;
   cursor: pointer;
   background-color: #e2e3e9;
+  padding-left: 5px;
 }
 
 .block p {
