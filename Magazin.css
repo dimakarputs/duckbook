@@ -1,0 +1,562 @@
+@charset "UTF-8";
+/*-----------------------ALL----------------------*/
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  src: url(../fonts/NotoSans.woff) format("woff");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: #fff;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 300;
+  list-style-type: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #272727;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(247, 255, 1, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: rgb(255, 255, 255);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.menu-button {
+  background-color: #272727;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+body {
+  background-color: #e2e3e9;
+}
+
+a {
+  -webkit-transition: 0.15s color;
+  transition: 0.15s color;
+}
+
+a:hover {
+  color: #f7f4ee;
+}
+
+.superContainer {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+}
+
+/*----------------------HEADER----------------------*/
+header {
+  z-index: 11;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 130px;
+  background-color:#262626;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  margin: auto;
+}
+
+.big_name {
+  font-size: 56px;
+  color:rgb(253, 250, 250);
+}
+
+.menuBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 76%;
+  font-size: 16px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  align-items: center;
+}
+
+.hamburger-menu {
+  display: none;
+  width: 70%;
+}
+
+#menu__toggle {
+  display: none;
+}
+
+.menu__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* используем flex для центрирования содержимого */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* центрируем содержимое кнопки */
+  position: absolute;
+  top: 44px;
+  right: 30px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 12;
+}
+
+/* добавляем "гамбургер" */
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+}
+
+.menu__btn > span::before {
+  content: "";
+  top: -8px;
+}
+
+.menu__btn > span::after {
+  content: "";
+  top: 8px;
+}
+
+/* контейнер меню */
+.menu__box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  text-align: center;
+  background-color: #121212;
+  -webkit-box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* элементы меню */
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 200;
+  text-decoration: none;
+}
+
+.menu__item:hover {
+  background-color: #cfd8dc;
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  right: 0;
+  left: auto;
+}
+
+/*-----------------------------------------------------*/
+.cinemas {
+  z-index: 1;
+  position: relative;
+  width: 80%;
+  display: block;
+  background-color:#e2e3e9;
+  margin: auto;
+  border-radius: 50px;
+  margin-top: 5vh;
+  padding-bottom: 50px;
+  margin-bottom: 5vh;
+}
+
+.items_head {
+  z-index: 11;
+  margin: auto;
+  width: 100%;
+  background-color: #262626;
+}
+
+.items_name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 28px;
+  text-transform: uppercase;
+  color: #f8f8f8;
+}
+
+.cinemas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cinemas .cinemaItem {
+  width: 90%;
+  margin: auto;
+  margin-top: 30px;
+  background-color: #262626;
+  border-radius: 3vw;
+}
+
+.cinemas .cinemaItem .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  margin: 30px auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cinemas .cinemaItem .row img {
+  width: 50%;
+  height: auto;
+}
+
+.cinemas .cinemaItem .row .cinemaName {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 180px;
+  width: 50%;
+}
+
+.cinemas .cinemaItem .description {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  font-size: 44px;
+}
+
+.cinemas .cinemaItem .description div {
+  margin: 40px 0;
+}
+
+/*-----------------FOOTER-----------------------------*/
+.content {
+  position: relative;
+  background-color:#1c1a1a;
+  display: flex;
+  width: 100%;
+  height: 280px;
+  justify-content: center;
+  align-items: center;
+  transition: 0.6s;
+}
+
+.logo-footer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 240px;
+  transition: 0.6s;
+}
+.logo-footer img {
+  width: 100px;
+  height: 100px;
+}
+
+.logo-up {
+  width: 100px;
+  height: 100px;
+  transition: 0.6s;
+}
+.logo-up img {
+  width: 90%;
+  height: 90%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.logo-up:hover {
+  transform: scale(1.2);
+}
+
+.soc-media {
+  display: flex;
+  justify-content: right;
+}
+
+.soc-net img {
+  width: 50px;
+  height: 50px;
+  margin: 0 5px;
+  transition: 0.6s;
+}
+
+.soc-net:hover img {
+  transform: scale(1.2);
+}
+
+.footer-description {
+  transition: 0.6s;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.company-info {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 60%;
+  height: 100%;
+  transition: 0.6s;
+  line-height: 1.5;
+  font-size: 20px;
+  color:#fff;
+}
+.company-info p {
+  height: 30%;
+  text-align: center;
+  margin-top: -10px;
+
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 30%;
+  height: 100%;
+  transition: 0.6s;
+  color: #fff;
+  font-size: 20px;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 200px;
+  font-weight: bold;
+  transition: 0.6s;
+}
+.footer {
+  display: flex;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+.full-footer{
+  height: 300%;
+}
+
+/*---------------------------------------------------*/
+@media (max-width: 2566px) {
+  header .wrap .big_name {
+    font-size: 60px;
+  }
+  header .wrap ul li {
+    font-size: 32px;
+  }
+  .items_name {
+    font-size: 46px;
+  }
+  footer {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 1926px) {
+  header .wrap .big_name {
+    font-size: 60px;
+  }
+  header .wrap ul li {
+    font-size: 22px;
+  }
+  .cinemas .cinemaItem .row .cinemaName {
+    font-size: 95px;
+  }
+  .cinemas .cinemaItem .description {
+    font-size: 28px;
+  }
+  footer {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 1441px) {
+  header .wrap .big_name {
+    font-size: 40px;
+  }
+  header .wrap ul li {
+    font-size: 18px;
+  }
+  .items_name {
+    font-size: 30px;
+  }
+  .cinemas .cinemaItem .row .cinemaName {
+    font-size: 60px;
+  }
+  .cinemas .cinemaItem .description {
+    font-size: 20px;
+  }
+  footer {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 769px) {
+  .menuBlock {
+    display: none;
+  }
+  .hamburger-menu {
+    display: block;
+  }
+  .cinemas .cinemaItem .row .cinemaName {
+    font-size: 34px;
+  }
+  .cinemas .cinemaItem .description {
+    font-size: 18px;
+  }
+  .cinemas .cinemaItem .description div {
+    margin: 20px 0;
+  }
+  .cinemas .cinemaItem .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .cinemas .cinemaItem .row img {
+    width: 88%;
+  }
+  .animate-logo {
+    margin-top: 35px;
+  }
+  .contacts{
+    font-size: 15px;
+  }
+  .company-info{
+    font-size: 16px;
+    margin: 20px;
+  margin-top: 15px;
+  }
+  .soc-media img{
+  width: 30px;
+  height: 30px;
+  }
+  .logo-up img{
+    width: 70px;
+  height: 70px;
+  }
+ 
+}
+
+@media (max-width: 426px) {
+  header .wrap .big_name {
+    font-size: 30px;
+  }
+  .cinemas .cinemaItem .row .cinemaName {
+    font-size: 28px;
+  }
+  .cinemas .cinemaItem .description {
+    font-size: 14 px;
+  }
+  .company-info{
+    font-size: 14px;
+    margin: 20px;
+  margin-top: 15px;
+  }
+ 
+}
+/*# sourceMappingURL=cinemas.css.map */

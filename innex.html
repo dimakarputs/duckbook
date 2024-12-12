@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>DuckBook</title>
+  <link rel="stylesheet" href="glavnay_menu.css">
+	<link rel="shortcut icon" href="foto\favicon.ico" type="image/x-icon">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+</style> 
+</head>
+
+<body>
+	<div class="superContainer">
+		<!----------------------------------HEADER------------------------------------>
+		<header>
+			<div class="wrap">
+			  <a href="Untitled-1.html" class="big_name">DuckBook</a>
+			  <ul class="menuBlock">
+				<li><a href="Magazin.html">МАГАЗИНЫ</a></li>
+				<li><a href="form.html">ВОЙТИ</a></li>
+				<li class="dropdown">
+				  <button class="menu-button">
+					<img src="foto/profile.png" alt="Профиль" class="profile-icon">
+				  </button>
+				  <div class="dropdown-content">
+					<a href="kabinet.html">Профиль</a>
+					<a href="#">Избранное</a>
+					<a href="#">Корзина</a>
+					<a href="#">Заказы</a>
+					<a href="#">Выйти</a>
+				  </div>
+				</li>
+			  </ul>
+			  <div class="hamburger-menu">
+				<input id="menu__toggle" type="checkbox" />
+				<label class="menu__btn" for="menu__toggle">
+				  <span></span>
+				</label>
+				<ul class="menu__box">
+				  <li><a class="menu__item" href="Magazin.html">МАГАЗИНЫ</a></li>
+				  <li><a class="menu__item" href="signIN.html">ВОЙТИ</a></li>
+				  <li><a class="menu__item" href="form.html">Профиль</a></li>
+				</ul>
+			  </div>
+			</div>
+		  </header>
+		  
+	  
+		
+    <!----------------------------------НОВИНКИ----------------------------------->
+		<div class="nov">
+			<div class="items_head">
+				<p class="items_name">Новинки</p>
+			</div>
+			<div class="row" id="row">
+				<script>
+				  // Функция для создания элемента блока книги
+					class BookBlock {
+    constructor(imgSrc, age, name, author) {
+        this.imgSrc = imgSrc;
+        this.age = age;
+        this.name = name;
+        this.author = author;
+    }
+
+    createBlock() {
+        const block = document.createElement('div');
+        block.classList.add('block');
+
+        const img = document.createElement('img');
+        img.src = this.imgSrc;
+        img.alt = this.name;
+        block.appendChild(img);
+
+        const ageP = document.createElement('p');
+        ageP.textContent = this.age;
+        block.appendChild(ageP);
+
+        const h3 = document.createElement('h3');
+        h3.textContent = this.name;
+        block.appendChild(h3);
+
+        const authorP = document.createElement('p');
+        authorP.textContent = this.author;
+        block.appendChild(authorP);
+
+        const buyButton = document.createElement('button');
+        buyButton.textContent = 'Купить книгу';
+        buyButton.classList.add('but');
+        buyButton.addEventListener('click', () => {
+            window.location.href = 'form.html';
+        });
+        block.appendChild(buyButton);
+
+        const favButton = document.createElement('button');
+        favButton.classList.add('isbr-button');
+        const favIcon = document.createElement('img');
+        favIcon.src = 'foto/isbr.png';
+        favIcon.classList.add('isbr-icon');
+        favButton.appendChild(favIcon);
+        const favLink = document.createElement('a');
+        favLink.href = 'form.html';
+        favLink.appendChild(favIcon);
+        favButton.appendChild(favLink);
+        block.appendChild(favButton);
+
+        return block;
+    }
+}
+
+// Использование класса
+const rowElement = document.getElementById('row');
+const books = [
+    ['foto\\kurok.jpg', '+18', 'Курок', 'Пенелопа Дуглас'],
+    ['foto\\kn3.png', '+18', 'Бездушный', 'Л.ДЖ.ШЭН'],
+		['foto\\kn1.png','+18', 'Грешник', 'Эмма Скотт'],
+		['foto\\kn2.png', '+18', 'Случится чудо', 'Л.ДЖ.Шэн'],
+		['foto\\kniga11.png', '+18', 'Желание', 'Трейси Вульф'],
+		['foto\\kniga4.png', '+18', 'Тень и искры', 'Дженнифер Арм.'],
+	  ['foto\\kniga5.png', '+18', 'Сгорая до тла', 'Эмма Скотт'],
+		['foto\\kniga6.png', '+18', 'Будь моей Брейшо', 'Меган Бренд']
+    // ... другие книги
+];
+books.forEach(([imgSrc, age, name, author]) => {
+    const book = new BookBlock(imgSrc, age, name, author);
+    rowElement.appendChild(book.createBlock());
+});
+
+			  
+				</script>
+			  
+			  </div>
+			  
+			</div>
+		</div>
+    
+		<!------------------------------------ДОСТАВКА------------------------------->
+		<div class="aboutService">
+			<div class="items_head">
+				<h1 class="items_name">
+					Доставка
+				</h1>
+			</div>
+			<div class="aboutText">
+				<p><span class="boldWord">DuckBook</span> осуществляет доставку  по России осуществляется через Boxberry, Почту России и Dostavista.
+				  Международные заказы отправляем почтой и DHL (по всему миру).<br>Заказ собирают и передают на доставку в течении 2 рабочих дней после 
+					оформления и оплаты заказа. В дни рассылки предзаказов срок может быть увеличен. Заказы, сделанные в пятницу, мы передаем на отправку в понедельник.
+					<br>Доставьте себе удовольствие от прочтения своих любимых книг!</p>
+			</div>
+			<div class="aboutBottom"></div>
+		</div> 
+    <!------------------------------------FOOTER---------------------------------->
+		<footer class="full-footer">
+			<div class="footer">
+				
+			<div class="content">
+					<div class="logo-footer">
+							<a href="#logo" class="logo-up">
+							<img src="foto\duckbook2.png"   >
+							</a>
+							<div class="footer-info">
+								<div class="soc-media">
+									<a class="soc-net" href="https://www.youtube.com/channel/UCXi2IeP2M-Z6Vsi-eNeGxAA"><img src="foto\youtube.png"></a>
+									<a class="soc-net" href="https://discord.gg/U8QzVpVnDE"><img src="foto\steam.png"></a>
+									<a class="soc-net" href="https://vk.com/public212916411"><img src="foto\vk.png"></a>
+									<a class="soc-net" href="https://www.twitch.tv/gi_twich"><img src="foto\twitch.png"></a>
+									<a class="soc-net" href="https://t.me/+UA9zMUjTAX9jZDg6"><img src="foto\telegram.png"></a>
+								</div>
+									<div class="footer-description">
+											<div class="company-info">
+													<p>Наши магазины    <!--/ссылка -->
+													<ul>
+															<li>Ст.метро "Каменная горка"</li>   <!--/ссылка -->
+															<li>Ст.метро "Пушкинская"</li>   <!--/ссылка -->
+															<li>Ст.метро "Немига"</li>     <!--/ссылка -->
+													</ul>
+											</p>   
+											</div>
+											<div class="contacts">
+													<p>+375482344565</p>
+													<p>DuckBook@gmail.com</p>
+													<p>DuckBook</p>
+											</div>
+					</div>
+			</div>  
+</footer>
+	</div>
+	</div>
+  </body>
+
+  </html>

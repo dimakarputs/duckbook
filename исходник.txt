@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>BOOKTOK</title>
+  <link rel="stylesheet" href="glavnay_menu.css">
+	<link rel="shortcut icon" href="foto\logo4.png" type="image/x-icon">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+</style> 
+</head>
+<body>
+	<div class="superContainer">
+		<!----------------------------------HEADER------------------------------------>
+		<header>
+			<div class="wrap">
+			
+				<a href="Untitled-1.html" class="big_name">BOOKTOK</a>
+				<ul class="menuBlock">
+					<li class="name"><a href="Magazin.html">МАГАЗИНЫ</a></li>     <!--/ссылка -->
+					<li class="name" > <a href="form.html">ВОЙТИ</a></li>
+				</ul>
+				<div class="hamburger-menu">
+					<input id="menu__toggle" type="checkbox" />
+					<label class="menu__btn" for="menu__toggle">
+						<span></span>
+					</label>
+					<ul class="menu__box">
+						<li><a class="menu__item" href="Untitled-1.html"></a>BOOKTOK</li>
+						<li><a class="menu__item" href="Magazin.html"></a>МАГАЗИНЫ</li>
+						<li><a class="menu__item" href="form.html">ВОЙТИ</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		
+    <!----------------------------------НОВИНКИ----------------------------------->
+		<div class="nov">
+			<div class="items_head">
+				<p class="items_name">Новинки</p>
+			</div>
+			<div class="row" id="row">
+				<script>
+					// Функция для создания элемента блока книги
+					function createBookBlock(imgSrc, age, name, author) {
+					  const block = document.createElement('div');
+					  block.classList.add('block');
+				
+					  const img = document.createElement('img');
+					  img.src = imgSrc;
+					  img.alt = name;
+					  block.appendChild(img);
+				
+					  const ageP = document.createElement('p');
+					  ageP.textContent = age;
+					  block.appendChild(ageP);
+				
+					  const h3 = document.createElement('h3');
+					  h3.textContent = name;
+					  block.appendChild(h3);
+				
+					  const authorP = document.createElement('p');
+					  authorP.textContent = author;
+					  block.appendChild(authorP);
+				
+					  const button = document.createElement('button');
+					  button.textContent = 'Купить книгу';
+					  block.appendChild(button);
+				
+					  return block;
+					}
+				
+					// Получение элемента "row"
+					const rowElement = document.getElementById('row');
+				
+					// Создание блоков для книг и добавление их в "row"
+					rowElement.appendChild(createBookBlock('foto\kurok.jpg', '+18', 'Курок', 'Пенелопа Дуглас'));
+					rowElement.appendChild(createBookBlock('foto\kn3.png', '+18', 'Бездушный', 'Л.ДЖ.ШЭН'));
+					rowElement.appendChild(createBookBlock('foto\kn1.png', '+18', 'Грешник', 'Эмма Скотт'));
+					rowElement.appendChild(createBookBlock('foto\kn2.png', '+18', 'Случится чудо', 'Л.ДЖ.Шэн'));
+					rowElement.appendChild(createBookBlock('foto\kniga11.png', '+18', 'Желание', 'Трейси Вульф'));
+					rowElement.appendChild(createBookBlock('foto\kniga4.png', '+18', 'Тень и искры', 'Дженнифер Арментроун'));
+					rowElement.appendChild(createBookBlock('foto\kniga5.png', '+18', 'Сгорая до тла', 'Эмма Скотт'));
+					rowElement.appendChild(createBookBlock('foto\kniga6.png', '+18', 'Будь моей Брейшо', 'Меган Бренд'));
+				
+				  </script>
+				
+			</div>
+			</div>
+		</div>
+    
+		<!------------------------------------ДОСТАВКА------------------------------->
+		<div class="aboutService">
+			<div class="items_head">
+				<h1 class="items_name">
+					Доставка
+				</h1>
+			</div>
+			<div class="aboutText">
+				<p><span class="boldWord">Booktok</span> осуществляет доставку  по России осуществляется через Boxberry, Почту России и Dostavista.
+				  Международные заказы отправляем почтой и DHL (по всему миру).<br>Заказ собирают и передают на доставку в течении 2 рабочих дней после 
+					оформления и оплаты заказа. В дни рассылки предзаказов срок может быть увеличен. Заказы, сделанные в пятницу, мы передаем на отправку в понедельник.
+					<br>Доставьте себе удовольствие от прочтения своих любимых книг!</p>
+			</div>
+			<div class="aboutBottom"></div>
+		</div> 
+    <!------------------------------------FOOTER---------------------------------->
+		<footer class="full-footer">
+			<div class="footer">
+				
+			<div class="content">
+					<div class="logo-footer">
+							<a href="#logo" class="logo-up">
+							<img src="foto\logo4.png"   >
+							</a>
+							<div class="footer-info">
+									<div class="soc-media">
+											<a class="soc-net" href=""><img src="foto\youtube.png"></a>
+											<a class="soc-net" href=""><img src="foto\steam.png"></a>
+											<a class="soc-net" href=""><img src="foto\vk.png"></a>
+											<a class="soc-net" href=""><img src="foto\twitch.png"></a>
+											<a class="soc-net" href=""><img src="foto\telegram.png"></a>
+									</div>
+									<div class="footer-description">
+											<div class="company-info">
+													<p>Наши магазины    <!--/ссылка -->
+													<ul>
+															<li>Ст.метро "Каменная горка"</li>   <!--/ссылка -->
+															<li>Ст.метро "Пушкинская"</li>   <!--/ссылка -->
+															<li>Ст.метро "Немига"</li>     <!--/ссылка -->
+													</ul>
+											</p>   
+											</div>
+											<div class="contacts">
+													<p>+375482344565</p>
+													<p>BOOKTOK@gmail.com</p>
+													<p>BOOKTOK</p>
+											</div>
+					</div>
+			</div>  
+</footer>
+	</div>
+	</div>
+  </body>
+
+  </html>
