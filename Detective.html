@@ -35,17 +35,13 @@
 				  </div>
 				</li>
 			  </ul>
-        <ul class="menuBlock">
-          <li id="menu-item">
-            Меню
-            <div class="submenu">
-              <p>Подменю 1</p>
-              <p>Подменю 2</p>
-              <p>Подменю 3</p>
-            </div>
-          </li>
-        </ul>
-        
+  
+
+<!-- Контейнер для всплывающего меню -->
+<div class="language-menu" id="language-menu">
+  <button id="change-to-ru">RU</button>
+  <button id="change-to-en">EN</button>
+</div>
 			  <div class="hamburger-menu">
 				<input id="menu__toggle" type="checkbox" />
 				<label class="menu__btn" for="menu__toggle">
@@ -199,14 +195,19 @@ books.forEach(([imgSrc, age, name, author]) => {
 	</div>
   <script>
 $(document).ready(function() {
-  // При наведении на элемент меню показываем подменю
-  $('#menu-item').mouseenter(function() {
-    $(this).find('.submenu').stop(true, true).fadeIn(200);  // Плавно показываем подменю
+  // Когда наводим курсор на кнопку "RU" или "EN", показываем меню
+  $('button#change-to-ru, button#change-to-en').mouseenter(function() {
+    $('#language-menu').stop(true, true).fadeIn(200);  // Плавное появление меню
   });
 
-  // При убирании курсора с элемента меню скрываем подменю
-  $('#menu-item').mouseleave(function() {
-    $(this).find('.submenu').stop(true, true).fadeOut(200);  // Плавно скрываем подменю
+  // Когда курсор уходит с кнопок или меню, скрываем меню
+  $('#language-menu').mouseleave(function() {
+    $(this).stop(true, true).fadeOut(200);  // Плавное исчезновение меню
+  });
+
+  // Также скрываем меню, если пользователь кликает на кнопки смены языка
+  $('#change-to-ru, #change-to-en').click(function() {
+    $('#language-menu').fadeOut(200);  // Меню исчезает после клика
   });
 });
   </script>

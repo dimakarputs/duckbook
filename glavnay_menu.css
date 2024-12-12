@@ -18,38 +18,31 @@
   position: relative;
   display: inline-block;
 }
-/* Стили для меню */
-.menuBlock {
-  list-style-type: none;
-}
-
-#menu-item {
-  position: relative;
-  display: inline-block;
+/* Стиль для кнопок */
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
   cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-/* Стили для всплывающего подменю */
-.submenu {
-  display: none;
+/* Стили для всплывающего меню */
+.language-menu {
+  display: none;  /* Меню скрыто по умолчанию */
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: 50px;  /* Позиция меню под кнопками */
   background-color: #f1f1f1;
-  padding: 10px;
+  padding: 15px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border-radius: 5px;
 }
 
-/* Стили для элементов подменю */
-.submenu p {
-  margin: 0;
-  padding: 5px;
-  cursor: pointer;
-}
-
-/* Изменение фона при наведении на элемент подменю */
-.submenu p:hover {
-  background-color: #ddd;
+/* Размещение кнопок в меню */
+.language-menu button {
+  margin: 5px 0;
 }
 
 .dropdown-content {
