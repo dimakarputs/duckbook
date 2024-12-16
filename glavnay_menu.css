@@ -28,11 +28,16 @@ button {
   border-radius: 5px;
 }
 
+/* Контейнер для меню */
+#language-menu-container {
+  position: relative;
+}
+
 /* Стили для всплывающего меню */
 .language-menu {
   display: none;  /* Меню скрыто по умолчанию */
   position: absolute;
-  top: 50px;  /* Позиция меню под кнопками */
+  top: 50px;  /* Позиция меню под кнопкой */
   background-color: #f1f1f1;
   padding: 15px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -40,7 +45,7 @@ button {
   border-radius: 5px;
 }
 
-/* Размещение кнопок в меню */
+/* Размещение кнопок внутри меню */
 .language-menu button {
   margin: 5px 0;
 }

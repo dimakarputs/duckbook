@@ -15,6 +15,37 @@
   position: relative;
   display: inline-block;
 }
+/* Стиль для кнопок */
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Контейнер для меню */
+#language-menu-container {
+  position: relative;
+}
+
+/* Стили для всплывающего меню */
+.language-menu {
+  display: none;  /* Меню скрыто по умолчанию */
+  position: absolute;
+  top: 50px;  /* Позиция меню под кнопкой */
+  background-color: #f1f1f1;
+  padding: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border-radius: 5px;
+}
+
+/* Размещение кнопок внутри меню */
+.language-menu button {
+  margin: 5px 0;
+}
 
 .dropdown-content {
   display: none;

@@ -8,7 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
       detectiveLink: "Детективы",
       fantasyLink: "Фантастика",
       kidsLink: "Детские",
-
+      profile: "Профиль",
+    favorites: "Избранное",
+    cart: "Корзина",
+    orders: "Заказы",
+    logout: "Выйти",
       // Заголовки
       popularAuthorsTitle: "Популярные авторы",
       popularBooksTitle: "Популярные книги авторов",
@@ -48,7 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
       detectiveLink: "Detectives",
       fantasyLink: "Fantasy",
       kidsLink: "Kids",
-
+profile: "Profile",
+    favorites: "Favorites",
+    cart: "Cart",
+    orders: "Orders",
+    logout: "Logout",
       // Заголовки
       popularAuthorsTitle: "Popular Authors",
       popularBooksTitle: "Popular Books by Authors",
@@ -123,6 +131,13 @@ document.addEventListener('DOMContentLoaded', () => {
       this.#updateElementText('detective-link', languageData.detectiveLink);
       this.#updateElementText('fantasy-link', languageData.fantasyLink);
         this.#updateElementText('kids-link', languageData.kidsLink);
+        
+        this.#updateElementText('profile', languageData.profile);
+        this.#updateElementText('favorites', languageData.favorites);
+        this.#updateElementText('cart', languageData.cart);
+          this.#updateElementText('orders', languageData.orders);
+          this.#updateElementText('logout', languageData.logout);
+
 
         // Заголовки
         this.#updateElementText('popular-authors-title', languageData.popularAuthorsTitle);

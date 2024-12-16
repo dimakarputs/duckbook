@@ -35,13 +35,17 @@
 				  </div>
 				</li>
 			  </ul>
-  
+  <!-- Меню для смены языка -->
+<div id="language-menu-container">
+  <button id="language-menu-button">Язык</button>
+  <div id="language-menu" class="language-menu">
+    <button id="change-to-ru">RU</button>
+    <button id="change-to-en">EN</button>
+  </div>
+</div>
 
 <!-- Контейнер для всплывающего меню -->
-<div class="language-menu" id="language-menu">
-  <button id="change-to-ru">RU</button>
-  <button id="change-to-en">EN</button>
-</div>
+
 			  <div class="hamburger-menu">
 				<input id="menu__toggle" type="checkbox" />
 				<label class="menu__btn" for="menu__toggle">
@@ -195,21 +199,28 @@ books.forEach(([imgSrc, age, name, author]) => {
 	</div>
   <script>
 $(document).ready(function() {
-  // Когда наводим курсор на кнопку "RU" или "EN", показываем меню
-  $('button#change-to-ru, button#change-to-en').mouseenter(function() {
+  // Показать меню при наведении на контейнер
+  $('#language-menu-container').mouseenter(function() {
     $('#language-menu').stop(true, true).fadeIn(200);  // Плавное появление меню
   });
 
-  // Когда курсор уходит с кнопок или меню, скрываем меню
-  $('#language-menu').mouseleave(function() {
-    $(this).stop(true, true).fadeOut(200);  // Плавное исчезновение меню
+  // Скрыть меню, когда убираем курсор с контейнера
+  $('#language-menu-container').mouseleave(function() {
+    $('#language-menu').stop(true, true).fadeOut(200);  // Плавное исчезновение меню
   });
 
-  // Также скрываем меню, если пользователь кликает на кнопки смены языка
-  $('#change-to-ru, #change-to-en').click(function() {
-    $('#language-menu').fadeOut(200);  // Меню исчезает после клика
+  // Действие при клике на кнопки (например, можно добавить смену текста или другие действия)
+  $('#change-to-ru').click(function() {
+    alert('Язык изменен на русский');
+    $('#language-menu').fadeOut(200);  // Меню исчезает после выбора
+  });
+
+  $('#change-to-en').click(function() {
+    alert('Language changed to English');
+    $('#language-menu').fadeOut(200);  // Меню исчезает после выбора
   });
 });
+
   </script>
   </body>
 

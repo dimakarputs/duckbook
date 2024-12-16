@@ -53,68 +53,10 @@
     <!----------------------------------НОВИНКИ----------------------------------->
     <div class="nov">
       <div class="items_head">
-        <p class="items_name" data-translate="newBooks">Новинки</p>
+        <p class="items_name" data-translate="newBooks">Избранное</p>
       </div>
       <div class="row" id="row">
-        <script>
-          class BookBlock {
-            constructor(imgSrc, age, name, author) {
-              this.imgSrc = imgSrc;
-              this.age = age;
-              this.name = name;
-              this.author = author;
-            }
-
-            createBlock() {
-              const block = document.createElement("div");
-              block.classList.add("block");
-
-              const img = document.createElement("img");
-              img.src = this.imgSrc;
-              img.alt = this.name;
-              block.appendChild(img);
-
-              const ageP = document.createElement("p");
-              ageP.textContent = this.age;
-              block.appendChild(ageP);
-
-              const h3 = document.createElement("h3");
-              h3.textContent = this.name;
-              block.appendChild(h3);
-
-              const authorP = document.createElement("p");
-              authorP.textContent = this.author;
-              block.appendChild(authorP);
-
-              const buyButton = document.createElement("button");
-              buyButton.textContent = translations.ru.buyBook; // Default to Russian
-              buyButton.classList.add("but");
-              buyButton.addEventListener("click", () => {
-                window.location.href = "form.html";
-              });
-              block.appendChild(buyButton);
-
-              return block;
-            }
-          }
-
-          const rowElement = document.getElementById("row");
-          const books = [
-          ['foto\\kurok.jpg', '+18', 'Курок', 'Пенелопа Дуглас'],
-    ['foto\\kn3.png', '+18', 'Бездушный', 'Л.ДЖ.ШЭН'],
-		['foto\\kn1.png','+18', 'Грешник', 'Эмма Скотт'],
-		['foto\\kn2.png', '+18', 'Случится чудо', 'Л.ДЖ.Шэн'],
-		['foto\\kniga11.png', '+18', 'Желание', 'Трейси Вульф'],
-		['foto\\kniga4.png', '+18', 'Тень и искры', 'Дженнифер Арм.'],
-	  ['foto\\kniga5.png', '+18', 'Сгорая до тла', 'Эмма Скотт'],
-		['foto\\kniga6.png', '+18', 'Будь моей Брейшо', 'Меган Бренд']
-          ];
-
-          books.forEach(([imgSrc, age, name, author]) => {
-            const book = new BookBlock(imgSrc, age, name, author);
-            rowElement.appendChild(book.createBlock());
-          });
-        </script>
+      
       </div>
     </div>
 
