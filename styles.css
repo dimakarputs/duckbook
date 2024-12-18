@@ -1,0 +1,170 @@
+/* Общие настройки */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+/* Стили для элементов корзины */
+#cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-item {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item-image {
+  width: 100px;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item-info {
+  flex: 1;
+}
+
+.cart-item-info h3 {
+  font-size: 1.2em;
+  margin: 0 0 5px;
+}
+
+.cart-item-info p {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+
+.cart-item-info button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.cart-item-info button:hover {
+  background-color: #0056b3;
+}
+
+.remove-item {
+  background-color: #dc3545;
+}
+
+.remove-item:hover {
+  background-color: #b21f30;
+}
+
+/* Стили для футера корзины */
+.cart-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.cart-footer button {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#clear-cart {
+  background-color: #dc3545;
+  color: white;
+}
+
+#clear-cart:hover {
+  background-color: #b21f30;
+}
+
+#checkout {
+  background-color: #28a745;
+  color: white;
+}
+
+#checkout:hover {
+  background-color: #1e7e34;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .cart-item-info {
+    width: 100%;
+  }
+
+  .cart-footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cart-footer button {
+    width: 100%;
+  }
+}
+.back-to-home {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-to-home:hover {
+  background-color: #010810;
+}

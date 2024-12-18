@@ -27,8 +27,8 @@
             </button>
             <div class="dropdown-content">
               <a href="kabinet.html" data-translate="profile">Профиль</a>
-              <a href="#" data-translate="favorites">Избранное</a>
-              <a href="#" data-translate="cart">Корзина</a>
+              <a href="izbanoe.html" data-translate="favorites">Избранное</a>
+              <a href="cart.html" data-translate="cart">Корзина</a>
               <a href="#" data-translate="orders">Заказы</a>
               <a href="#" data-translate="logout">Выйти</a>
             </div>
@@ -58,62 +58,114 @@
       <div class="row" id="row">
         <script>
           class BookBlock {
-            constructor(imgSrc, age, name, author) {
-              this.imgSrc = imgSrc;
-              this.age = age;
-              this.name = name;
-              this.author = author;
-            }
+  constructor(imgSrc, age, name, author, price) {
+    this.imgSrc = imgSrc;
+    this.age = age;
+    this.name = name;
+    this.author = author;
+    this.price = price; // Добавляем цену
+  }
 
-            createBlock() {
-              const block = document.createElement("div");
-              block.classList.add("block");
+  createBlock() {
+    const block = document.createElement("div");
+    block.classList.add("block");
 
-              const img = document.createElement("img");
-              img.src = this.imgSrc;
-              img.alt = this.name;
-              block.appendChild(img);
+    const img = document.createElement("img");
+    img.src = this.imgSrc;
+    img.alt = this.name;
+    block.appendChild(img);
 
-              const ageP = document.createElement("p");
-              ageP.textContent = this.age;
-              block.appendChild(ageP);
+    const ageP = document.createElement("p");
+    ageP.textContent = this.age;
+    block.appendChild(ageP);
 
-              const h3 = document.createElement("h3");
-              h3.textContent = this.name;
-              block.appendChild(h3);
+    const h3 = document.createElement("h3");
+    h3.textContent = this.name;
+    block.appendChild(h3);
 
-              const authorP = document.createElement("p");
-              authorP.textContent = this.author;
-              block.appendChild(authorP);
+    const authorP = document.createElement("p");
+    authorP.textContent = this.author;
+    block.appendChild(authorP);
 
-              const buyButton = document.createElement("button");
-              buyButton.textContent = translations.ru.buyBook; // Default to Russian
-              buyButton.classList.add("but");
-              buyButton.addEventListener("click", () => {
-                window.location.href = "form.html";
-              });
-              block.appendChild(buyButton);
+    const priceP = document.createElement("p");
+    priceP.textContent = `${this.price} руб.`; // Отображаем цену
+    block.appendChild(priceP); // Добавляем цену в блок
 
-              return block;
-            }
-          }
+    const favoriteButton = document.createElement("button");
+    favoriteButton.innerHTML = "&#9733;"; // Звезда
+    favoriteButton.classList.add("favorite-button");
+    favoriteButton.addEventListener("click", () => {
+      this.addToFavorites();
+    });
+    block.appendChild(favoriteButton);
 
-          const rowElement = document.getElementById("row");
-          const books = [
-          ['foto\\kurok.jpg', '+18', 'Курок', 'Пенелопа Дуглас'],
-    ['foto\\kn3.png', '+18', 'Бездушный', 'Л.ДЖ.ШЭН'],
-		['foto\\kn1.png','+18', 'Грешник', 'Эмма Скотт'],
-		['foto\\kn2.png', '+18', 'Случится чудо', 'Л.ДЖ.Шэн'],
-		['foto\\kniga11.png', '+18', 'Желание', 'Трейси Вульф'],
-		['foto\\kniga4.png', '+18', 'Тень и искры', 'Дженнифер Арм.'],
-	  ['foto\\kniga5.png', '+18', 'Сгорая до тла', 'Эмма Скотт'],
-		['foto\\kniga6.png', '+18', 'Будь моей Брейшо', 'Меган Бренд']
-          ];
+    const buyButton = document.createElement("button");
+    buyButton.textContent = "Добавить в корзину";
+    buyButton.classList.add("cart-button");
+    buyButton.addEventListener("click", () => {
+      addToCart(this.imgSrc, this.age, this.name, this.author, this.price); // Передаем цену в корзину
+    });
+    block.appendChild(buyButton);
 
-          books.forEach(([imgSrc, age, name, author]) => {
-            const book = new BookBlock(imgSrc, age, name, author);
-            rowElement.appendChild(book.createBlock());
-          });
+    return block;
+  }
+
+  addToFavorites() {
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const book = { imgSrc: this.imgSrc, age: this.age, name: this.name, author: this.author, price: this.price };
+
+    // Проверяем, есть ли уже такая книга в избранном
+    if (!favorites.some((b) => b.name === book.name)) {
+      favorites.push(book);
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+      alert("Книга добавлена в избранное!");
+    } else {
+      alert("Эта книга уже в избранном!");
+    }
+  }
+}
+
+function addToCart(imgSrc, age, name, author, price) {
+  // Получаем текущую корзину из localStorage
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // Проверяем, есть ли эта книга уже в корзине
+  const existingBook = cart.find(item => item.name === name);
+
+  if (existingBook) {
+    alert("Эта книга уже в корзине!");
+    return;
+  }
+
+  // Добавляем книгу в корзину
+  cart.push({ imgSrc, age, name, author, price, quantity: 1 });
+
+  // Сохраняем обновлённую корзину в localStorage
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  alert("Книга добавлена в корзину!");
+}
+
+
+
+
+const rowElement = document.getElementById("row");
+const books = [
+  ['foto\\kurok.jpg', '+18', 'Курок', 'Пенелопа Дуглас', 499],
+  ['foto\\kn3.png', '+18', 'Бездушный', 'Л.ДЖ.ШЭН', 350],
+  ['foto\\kn1.png', '+18', 'Грешник', 'Эмма Скотт', 400],
+  ['foto\\kn2.png', '+18', 'Случится чудо', 'Л.ДЖ.Шэн', 450],
+  ['foto\\kniga11.png', '+18', 'Желание', 'Трейси Вульф', 550],
+  ['foto\\kniga4.png', '+18', 'Тень и искры', 'Дженнифер Арм.', 600],
+  ['foto\\kniga5.png', '+18', 'Сгорая до тла', 'Эмма Скотт', 490],
+  ['foto\\kniga6.png', '+18', 'Будь моей Брейшо', 'Меган Бренд', 530]
+];
+
+books.forEach(([imgSrc, age, name, author, price]) => {
+  const book = new BookBlock(imgSrc, age, name, author, price);
+  rowElement.appendChild(book.createBlock());
+});
+
         </script>
       </div>
     </div>
