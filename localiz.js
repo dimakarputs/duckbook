@@ -5,6 +5,19 @@ document.addEventListener('DOMContentLoaded', () => {
       shopsLink: "МАГАЗИНЫ",
       loginLink: "ВОЙТИ",
       novelLink: "Романы",
+      loginFormTitle: "Вход",
+      userNameLabel: "Имя пользователя",
+      passwordLabel: "Пароль",
+      registerButton: "Регистрация",
+      loginButton: "Войти",
+      profileLink: "Профиль",
+
+      surnameLabel: "Фамилия:",
+      nameLabel: "Имя:",
+      patronymicLabel: "Имя пользователя:",
+      mailLabel: "Номер телефон",
+      numberLabel: "Пароль:",
+      saveButton: "Сохранить",
       detectiveLink: "Детективы",
       fantasyLink: "Фантастика",
       kidsLink: "Детские",
@@ -48,6 +61,19 @@ document.addEventListener('DOMContentLoaded', () => {
       siteName: "DuckBook",
       shopsLink: "SHOPS",
       loginLink: "LOGIN",
+      loginFormTitle: "Login",
+      userNameLabel: "Username",
+      passwordLabel: "Password",
+      registerButton: "Register",
+      loginButton: "Login",
+      profileLink: "Profile",
+
+      surnameLabel: "Surname:",
+      nameLabel: "Name:",
+      patronymicLabel: "Username:",
+      mailLabel: "Number:",
+      numberLabel: "Password:",
+      saveButton: "Save",
       novelLink: "Novels",
       detectiveLink: "Detectives",
       fantasyLink: "Fantasy",
@@ -137,6 +163,21 @@ profile: "Profile",
         this.#updateElementText('cart', languageData.cart);
           this.#updateElementText('orders', languageData.orders);
           this.#updateElementText('logout', languageData.logout);
+//form
+          this.#updateElementText('login-form-title', languageData. loginFormTitle);
+          this.#updateElementText('user-name-label', languageData.userNameLabel);
+          this.#updateElementText('password-label', languageData. passwordLabel);
+          this.#updateElementText('login-button', languageData. loginButton);
+          this.#updateElementText('register-button', languageData.registerButton);
+          //profile
+          this.#updateElementText('profile-form-title', languageData.profileLink);
+          this.#updateElementText('surname-label', languageData.surnameLabel);
+//form
+          this.#updateElementText('name-label', languageData. nameLabel);
+          this.#updateElementText('patronymic-label', languageData.patronymicLabel);
+          this.#updateElementText('mail-labell', languageData. mailLabel);
+          this.#updateElementText('number-label', languageData. numberLabel);
+          this.#updateElementText('save-button', languageData.saveButton);
 
 
         // Заголовки

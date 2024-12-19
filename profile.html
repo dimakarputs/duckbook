@@ -5,6 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>DuckBook</title>
   <link rel="stylesheet" href="form.style.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="localiz.js"></script>
+	<script src="JQiery.js"></script>
 	<link rel="shortcut icon" href="foto\favicon.ico" type="image/x-icon">
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
@@ -34,11 +37,17 @@
 						<li><a class="menu__item" href="signIN.html">ВОЙТИ</a></li>
 						<li><a class="menu__item" href="form.html">Профиль</a></li>
 					</ul>
-				 </div>
-				 <button class="knopka" onclick="changeLanguage('ru')">Русский</button>
-         <button class="knopka" onclick="changeLanguage('en')">English</button>
+				</ul>
 			</div>
-		</header>
+			<div id="language-menu-container">
+				<button id="language-menu-button">Язык</button>
+				<div id="language-menu" class="language-menu">
+					<button id="change-to-ru">RU</button>
+					<button id="change-to-en">EN</button>
+				</div>
+			</div>
+		</div>
+	</header>
 
 		<div class="wrap" id="wrapForm">
 			<div class="items_head">
@@ -117,6 +126,6 @@
 			</div>  
 </footer> 
 	</div>
-	<script src="localiz2.js"></script>
+
 </body>
 </html>

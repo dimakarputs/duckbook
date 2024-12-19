@@ -8,6 +8,7 @@ const translations = {
     "orders": "Заказы",
     "logout": "Выйти",
     "newBooks": "Новинки",
+    "izbranoe":"Избранное",
     "buyBook": "Купить книгу",
     "delivery": "Доставка",
     "deliveryText": `DuckBook осуществляет доставку по России через Boxberry, Почту России и Dostavista.
@@ -28,6 +29,7 @@ const translations = {
     "orders": "Orders",
     "logout": "Logout",
     "newBooks": "New Arrivals",
+    "izbranoe":"Favourites",
     "buyBook": "Buy Book",
     "delivery": "Delivery",
     "deliveryText": `DuckBook delivers across Russia via Boxberry, Russian Post, and Dostavista.

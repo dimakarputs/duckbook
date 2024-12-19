@@ -5,7 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>DuckBook</title>
   <link rel="stylesheet" href="form.style.css">
-	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="localiz.js"></script>
+	<script src="JQiery.js"></script>
 	<link rel="shortcut icon" href="foto\favicon.ico" type="image/x-icon">
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
@@ -15,34 +17,41 @@
 <body>
 	<div class="superContainer">
 		<!--HEADER-->
-		<header>
-			<div class="wrap">
-				<a href="Untitled-1.html" class="big_name" id="site-name">DuckBook</a>
-				<ul class="menuBlock">
-					<li><a href="Magazin.html" id="shops-link">МАГАЗИНЫ</a></li>
-					<li><a href="form.html" id="login-link">ВОЙТИ</a></li>
-					<button class="menu-button">
-						<a href="form.html"><img src="foto/profile.png" alt="Профиль" class="profile-icon" id="profile-link"></a>
-					</button>
-				</ul>
-				<div class="hamburger-menu">
-					<!-- Мобильное меню -->
-					<input id="menu__toggle" type="checkbox" />
-					<label class="menu__btn" for="menu__toggle">
-						<span></span>
-					</label>
-					<ul class="menu__box">
-						<li><a class="menu__item" href="Magazin.html" id="menu-shops-link">МАГАЗИНЫ</a></li>
-						<li><a class="menu__item" href="form.html" id="menu-login-link">ВОЙТИ</a></li>
-						<li><a class="menu__item" href="form.html" id="menu-profile-link">Профиль</a></li>
-					</ul>
-				</div>
-				<button class="knopka" onclick="changeLanguage('ru')">Русский</button>
-				<button class="knopka" onclick="changeLanguage('en')">English</button>
-			</div>
-		</header>
+    <header>
+      <div class="wrap">
+        <a href="Untitled-1.html" class="big_name" id="site-name">DuckBook</a>
+        <ul class="menuBlock">
+          <li><a href="Magazin.html" id="shops-link">МАГАЗИНЫ</a></li>
+          <li><a href="form.html" id="login-link">ВОЙТИ</a></li>
+          <li>
+            <a href="form.html">
+              <img src="foto/profile.png" alt="Профиль" class="profile-icon" id="profile-link">
+            </a>
+          </li>
+        </ul>
+        <div class="hamburger-menu">
+          <!-- Мобильное меню -->
+          <input id="menu__toggle" type="checkbox" />
+          <label class="menu__btn" for="menu__toggle">
+            <span></span>
+          </label>
+          <ul class="menu__box">
+            <li><a class="menu__item" href="Magazin.html" id="menu-shops-link">МАГАЗИНЫ</a></li>
+            <li><a class="menu__item" href="form.html" id="menu-login-link">ВОЙТИ</a></li>
+            <li><a class="menu__item" href="form.html" id="menu-profile-link">Профиль</a></li>
+          </ul>
+        </div>
+        <div id="language-menu-container">
+          <button id="language-menu-button">Язык</button>
+          <div id="language-menu" class="language-menu">
+            <button id="change-to-ru">RU</button>
+            <button id="change-to-en">EN</button>
+          </div>
+        </div>
+      </div>
+    </header>
 		
-		<!-- Форма входа -->
+	
 		<div class="wrap" id="wrapForm">
 			<div class="items_head">
 				<p class="items_name" id="login-form-title">Вход</p>
@@ -65,45 +74,55 @@
 					</li>
 				</ul>
 			</form>
-		</div>
+		</div> 
 		
 		<!-- Футер -->
 		<footer class="full-footer">
-			<div class="footer">
-				<div class="content">
-					<div class="logo-footer">
-						<a href="#logo" class="logo-up">
-							<img src="foto/duckbook2.png">
-						</a>
-						<div class="footer-info">
-							<div class="soc-media">
-								<a class="soc-net" href="https://www.youtube.com/channel/UCXi2IeP2M-Z6Vsi-eNeGxAA" id="social-youtube"><img src="foto/youtube.png"></a>
-								<a class="soc-net" href="https://discord.gg/U8QzVpVnDE" id="social-discord"><img src="foto/steam.png"></a>
-								<a class="soc-net" href="https://vk.com/public212916411" id="social-vk"><img src="foto/vk.png"></a>
-								<a class="soc-net" href="https://www.twitch.tv/gi_twich" id="social-twitch"><img src="foto/twitch.png"></a>
-								<a class="soc-net" href="https://t.me/+UA9zMUjTAX9jZDg6" id="social-telegram"><img src="foto/telegram.png"></a>
-							</div>
-							<div class="footer-description">
-								<div class="company-info">
-									<p id="our-stores-title">Наши магазины</p>
-									<ul>
-											<li id="store-kamenaya">Ст. метро "Каменная горка"</li>
-											<li id="store-pushkinskaya">Ст. метро "Пушкинская"</li>
-											<li id="store-nemiga">Ст. метро "Немига"</li>
-									</ul>
-							</div>
-							<div class="contacts">
-									<p id="phone-number">+375482344565</p>
-									<p id="email">BOOKTOK@gmail.com</p>
-									<p id="company-name"> DuckBook</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer>
-		</div>
-		<script src="localiz1.js"></script>
+      <div class="footer">
+        <div class="content">
+          <div class="logo-footer">
+            <a href="#logo" class="logo-up">
+              <img src="foto/duckbook2.png" alt="DuckBook Logo">
+            </a>
+            <div class="footer-info">
+              <div class="soc-media">
+                <a class="soc-net" href="https://www.youtube.com/channel/UCXi2IeP2M-Z6Vsi-eNeGxAA" id="social-youtube">
+                  <img src="foto/youtube.png" alt="YouTube">
+                </a>
+                <a class="soc-net" href="https://discord.gg/U8QzVpVnDE" id="social-discord">
+                  <img src="foto/steam.png" alt="Steam">
+                </a>
+                <a class="soc-net" href="https://vk.com/public212916411" id="social-vk">
+                  <img src="foto/vk.png" alt="VK">
+                </a>
+                <a class="soc-net" href="https://www.twitch.tv/gi_twich" id="social-twitch">
+                  <img src="foto/twitch.png" alt="Twitch">
+                </a>
+                <a class="soc-net" href="https://t.me/+UA9zMUjTAX9jZDg6" id="social-telegram">
+                  <img src="foto/telegram.png" alt="Telegram">
+                </a>
+              </div>
+              <div class="footer-description">
+                <div class="company-info">
+                  <p id="our-stores-title">Наши магазины</p>
+                  <ul>
+                    <li id="store-kamenaya">Ст. метро "Каменная горка"</li>
+                    <li id="store-pushkinskaya">Ст. метро "Пушкинская"</li>
+                    <li id="store-nemiga">Ст. метро "Немига"</li>
+                  </ul>
+                </div>
+                <div class="contacts">
+                  <p id="phone-number">+375482344565</p>
+                  <p id="email">BOOKTOK@gmail.com</p>
+                  <p id="company-name">DuckBook</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
 </body>
 
 </html>
