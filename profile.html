@@ -83,11 +83,39 @@
 
 				</ul>
 				<script>
-					let a = document.getElementById("butt");
-					console.log(a);
-					a.addEventListener('click', () => {
-						alert("Информация о профиле сохранена.")
-					});
+    // Получаем элементы формы
+    const form = document.querySelector('form');
+    const phoneInput = document.getElementById('mail');
+    const passwordInput = document.getElementById('number');
+    
+    // Регулярные выражения для валидации
+    const phoneRegex = /^\+?\d{10,15}$/; // Для номеров телефона (например, "+375482344565")
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/; // Пароль: минимум 8 символов, хотя бы одна буква и одна цифра
+
+    form.addEventListener('submit', (event) => {
+        let isValid = true;
+
+        // Проверяем номер телефона
+        if (!phoneRegex.test(phoneInput.value)) {
+            alert('Введите корректный номер телефона (например, +375482344565).');
+            isValid = false;
+        }
+
+        // Проверяем пароль
+        if (!passwordRegex.test(passwordInput.value)) {
+            alert('Пароль должен содержать минимум 8 символов, включая буквы и цифры.');
+            isValid = false;
+        }
+
+        // Если есть ошибки, предотвращаем отправку формы
+        if (!isValid) {
+            event.preventDefault();
+        } else {
+            alert('Информация о профиле сохранена.');
+        }
+    });
+</script>
+
 				</script>
 			</form>
 		</div>
