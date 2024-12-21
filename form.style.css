@@ -346,6 +346,7 @@ form ul li {
   margin-top: 25px;
 }
 
+
 form ul li input {
   background-color:#ffffff;
   height: 50px;
@@ -384,6 +385,16 @@ form ul li label {
 }
 
 form ul li #butt {
+  background-color: #262626;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  -webkit-transition: 0.15s color;
+  transition: 0.15s color;
+}
+
+
+form ul li #login-button {
   background-color: #262626;
   height: 50px;
   border: none;

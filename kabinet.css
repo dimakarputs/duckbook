@@ -411,9 +411,19 @@ body {
   width: 80%;
   display: block;
   background-color:#262626;
-  margin: 40px auto 330px;
+  margin: 40px auto 65px;
   border-radius: 50px;
 }
+
+.user-info h2 {
+  color: black; /* Устанавливаем черный цвет для всего текста внутри .user-info */
+}
+
+.user-info p {
+  color: black; /* Убедимся, что текст внутри <p> также черный */
+}
+
+
 
 .aboutText {
   margin: 20px 100px;
@@ -426,17 +436,7 @@ body {
   /*text-align: center;*/
 }
 
-.boldWord {
-  font-weight: 400;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  
-}
 
-.aboutBottom {
-  height: 60px;
-  background-color: #262626;
-}
 
 
 

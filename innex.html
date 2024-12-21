@@ -26,11 +26,10 @@
               <img src="foto/profile.png" alt="Profile" class="profile-icon">
             </button>
             <div class="dropdown-content">
-              <a href="kabinet.html" data-translate="profile">Профиль</a>
-              <a href="izbanoe.html" data-translate="favorites">Избранное</a>
-              <a href="cart.html" data-translate="cart">Корзина</a>
-              <a href="#" data-translate="orders">Заказы</a>
-              <a href="#" data-translate="logout">Выйти</a>
+              <a href="form.html" data-translate="profile">Профиль</a>
+              <a href="form.html" data-translate="favorites">Избранное</a>
+              <a href="form.html" data-translate="cart">Корзина</a>
+              <a href="form.html" data-translate="orders">Заказы</a>
             </div>
           </li>
         </ul>
@@ -99,7 +98,7 @@
     });
     block.appendChild(favoriteButton);
 
-    const buyButton = document.createElement("button");
+    const buyButton = document.createElement("button1");
     buyButton.textContent = "Добавить в корзину";
     buyButton.classList.add("cart-button");
     buyButton.addEventListener("click", () => {

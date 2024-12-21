@@ -1,5 +1,5 @@
 const modal = document.querySelector('.modal');
-const openModalBtns = document.querySelectorAll('.our-team');
+const openModalBtns = document.querySelectorAll('.help');
 const closeModalBtn = document.querySelector('.close-modal-btn');
 
 openModalBtns.forEach(btn => {

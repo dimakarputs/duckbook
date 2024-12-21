@@ -2,177 +2,216 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>DuckBook</title>
   <link rel="stylesheet" href="kabinet.css">
-	<link rel="shortcut icon" href="foto\favicon.ico" type="image/x-icon">
-	<style>
-		@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
-</style> 
+  <link rel="shortcut icon" href="foto\favicon.ico" type="image/x-icon">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+  </style> 
 </head>
 
 <body>
-	<div class="superContainer">
-		<!----------------------------------HEADER------------------------------------>
-		<header>
-			<div class="wrap">
-			  <a href="Untitled-1.html" class="big_name">DuckBook</a>
-			  <ul class="menuBlock">
-				<li><a href="Magazin.html">МАГАЗИНЫ</a></li>
-				<li><a href="form.html">ВОЙТИ</a></li>
-				<li class="dropdown">
-				  <button class="menu-button">
-					<img src="foto/profile.png" alt="Профиль" class="profile-icon">
-				  </button>
-				  <div class="dropdown-content">
-					<a href="kabinet.html">Профиль</a>
-					<a href="#">Избранное</a>
-					<a href="#">Корзина</a>
-					<a href="#">Заказы</a>
-					<a href="#">Выйти</a>
-				  </div>
-				</li>
-			  </ul>
-			  <div class="hamburger-menu">
-				<input id="menu__toggle" type="checkbox" />
-				<label class="menu__btn" for="menu__toggle">
-				  <span></span>
-				</label>
-				<ul class="menu__box">
-				  <li><a class="menu__item" href="Magazin.html">МАГАЗИНЫ</a></li>
-				  <li><a class="menu__item" href="signIN.html">ВОЙТИ</a></li>
-				  <li><a class="menu__item" href="form.html">Профиль</a></li>
-				</ul>
-			  </div>
-			</div>
-		  </header>
-		  
-	  
-		
+  <div class="superContainer">
+    <!----------------------------------HEADER------------------------------------>
+    <header>
+      <div class="wrap">
+        <a href="Untitled-1.html" class="big_name">DuckBook</a>
+        <ul class="menuBlock">
+          <li><a href="Magazin.html">МАГАЗИНЫ</a></li>
+          <li><a href="form.html">ВОЙТИ</a></li>
+          <li class="dropdown">
+            <button class="menu-button">
+              <img src="foto/profile.png" alt="Профиль" class="profile-icon">
+            </button>
+            <div class="dropdown-content">
+              <a href="kabinet.html">Профиль</a>
+              <a href="#">Избранное</a>
+              <a href="#">Корзина</a>
+              <a href="#">Заказы</a>
+              <a href="#" data-translate="logout" onclick="logout()">Выйти</a>
+            </div>
+          </li>
+        </ul>
+        <div class="hamburger-menu">
+          <input id="menu__toggle" type="checkbox" />
+          <label class="menu__btn" for="menu__toggle">
+            <span></span>
+          </label>
+          <ul class="menu__box">
+            <li><a class="menu__item" href="Magazin.html">МАГАЗИНЫ</a></li>
+            <li><a class="menu__item" href="signIN.html">ВОЙТИ</a></li>
+            <li><a class="menu__item" href="form.html">Профиль</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
     <!----------------------------------ИНФОРМАЦИЯ----------------------------------->
-    
     <div class="container">
-        <div class="row">
+      <div class="row">
+
+		
+		<!-- Блок с информацией о пользователе (будет отображаться сразу при загрузке страницы) -->
+    <div class="user-info" id="userInfo">
+      <h2>Информация о пользователе</h2>
+      <p id="user-nickname">Никнейм: </p>
+      <p id="user-fname">Имя: </p>
+      <p id="user-lname">Фамилия: </p>
+      <p id="user-phone">Телефон: </p>
+    </div>
+
+  
 
         <div class="block">
-            <button class="block-button">
-                <div class="our-team">
-                    <div class="picture">
-                        <img class="img-fluid" src="foto\profile1.png">
-                    </div>
-                    <div class="team-content">
-                        <h3 class="name">О вас</h3>
-                    </div>
-                </div>
-            </button>
+          <a href="izbanoe.html" class="block-button">
+            <div class="our-team">
+              <div class="picture">
+                <img class="img-fluid" src="foto\isbr1.png">
+              </div>
+              <div class="team-content">
+                <h3 class="name">Избранное</h3>
+              </div>
+            </div>
+          </a>
         </div>
 
         <div class="block">
-            <button class="block-button">
-                <div class="our-team">
-                    <div class="picture">
-                        <img class="img-fluid" src="foto\isbr1.png">
-                    </div>
-                    <div class="team-content">
-                        <h3 class="name">Избранное</h3>
-                    </div>
-                </div>
-            </button>
+          <a href="cart.html" class="block-button">
+            <div class="our-team">
+              <div class="picture">
+                <img class="img-fluid" src="foto/sumka.png" alt="Покупки">
+              </div>
+              <div class="team-content">
+                <h3 class="name">Корзина</h3>
+              </div>
+            </div>
+          </a>
         </div>
 
-        <div class="block">
-            <button class="block-button">
-                <div class="our-team">
-                    <div class="picture">
-                        <img class="img-fluid" src="foto\sumka.png">
-                    </div>
-                    <div class="team-content">
-                        <h3 class="name">Покупки</h3>
-                    </div>
-                </div>
-            </button>
-        </div>
-
+        <div class="help">
           <div class="block">
             <button class="block-button">
-                <div class="our-team">
-                    <div class="picture">
-                        <img class="img-fluid" src="foto\duckbook.jpg">
-                    </div>
-                    <div class="team-content">
-                        <h3 class="name">Помощь</h3>
-                    </div>
+              <div class="our-team">
+                <div class="picture">
+                  <img class="img-fluid" src="foto\duckbook.jpg">
                 </div>
+                <div class="team-content">
+                  <h3 class="name">Помощь</h3>
+                </div>
+              </div>
             </button>
+          </div>
         </div>
       </div>
 
+      <!-- Модальное окно с информацией -->
       <div class="modal">
         <div class="modal-content">
           <p>По всем вопросам вы можете обратиться на почтовый ящик DuckBook@gmail.com.
-			<br>Наша служба поддержки обязательно ответит вам в течении суток.
-		  </p>
+            <br>Наша служба поддержки обязательно ответит вам в течении суток.
+          </p>
           <button class="close-modal-btn">Закрыть</button>
         </div>
       </div>
 
-
       <script src="kabinet.js"></script>
 
+      <!------------------------------------ДОСТАВКА------------------------------->
+      <div class="aboutService">
+        <div class="items_head">
+          <h1 class="items_name">Доставка</h1>
+        </div>
+        <div class="aboutText">
+          <p><span class="boldWord">DuckBook</span> осуществляет доставку по России через Boxberry, Почту России и Dostavista.
+            Международные заказы отправляем почтой и DHL (по всему миру).<br>Заказ собирают и передают на доставку в течение 2 рабочих дней после оформления и оплаты заказа. В дни рассылки предзаказов срок может быть увеличен. Заказы, сделанные в пятницу, мы передаем на отправку в понедельник.
+            <br>Доставьте себе удовольствие от прочтения своих любимых книг!</p>
+        </div>
+      </div>
 
-    
-		<!------------------------------------ДОСТАВКА------------------------------->
-		<div class="aboutService">
-			<div class="items_head">
-				<h1 class="items_name">
-					Доставка
-				</h1>
-			</div>
-			<div class="aboutText">
-				<p><span class="boldWord">DuckBook</span> осуществляет доставку  по России осуществляется через Boxberry, Почту России и Dostavista.
-				  Международные заказы отправляем почтой и DHL (по всему миру).<br>Заказ собирают и передают на доставку в течении 2 рабочих дней после 
-					оформления и оплаты заказа. В дни рассылки предзаказов срок может быть увеличен. Заказы, сделанные в пятницу, мы передаем на отправку в понедельник.
-					<br>Доставьте себе удовольствие от прочтения своих любимых книг!</p>
-			</div>
-			<div class="aboutBottom"></div>
-		</div> 
-    <!------------------------------------FOOTER---------------------------------->
-		<footer class="full-footer">
-			<div class="footer">
-				
-			<div class="content">
-					<div class="logo-footer">
-							<a href="#logo" class="logo-up">
-							<img src="foto\duckbook2.png"   >
-							</a>
-							<div class="footer-info">
-								<div class="soc-media">
-									<a class="soc-net" href="https://www.youtube.com/channel/UCXi2IeP2M-Z6Vsi-eNeGxAA"><img src="foto\youtube.png"></a>
-									<a class="soc-net" href="https://discord.gg/U8QzVpVnDE"><img src="foto\steam.png"></a>
-									<a class="soc-net" href="https://vk.com/public212916411"><img src="foto\vk.png"></a>
-									<a class="soc-net" href="https://www.twitch.tv/gi_twich"><img src="foto\twitch.png"></a>
-									<a class="soc-net" href="https://t.me/+UA9zMUjTAX9jZDg6"><img src="foto\telegram.png"></a>
-								</div>
-									<div class="footer-description">
-											<div class="company-info">
-													<p>Наши магазины    <!--/ссылка -->
-													<ul>
-															<li>Ст.метро "Каменная горка"</li>   <!--/ссылка -->
-															<li>Ст.метро "Пушкинская"</li>   <!--/ссылка -->
-															<li>Ст.метро "Немига"</li>     <!--/ссылка -->
-													</ul>
-											</p>   
-											</div>
-											<div class="contacts">
-													<p>+375482344565</p>
-													<p>DuckBook@gmail.com</p>
-													<p>DuckBook</p>
-											</div>
-					</div>
-			</div>  
-</footer>
-	</div>
-	</div>
-  </body>
+      <!------------------------------------FOOTER---------------------------------->
+      <div class="content">
+        <div class="logo-footer">
+          <a href="#logo" class="logo-up">
+            <img src="foto\duckbook2.png" />
+          </a>
+          <div class="footer-info">
+            <div class="soc-media">
+              <a class="soc-net" href="https://www.youtube.com/channel/UCXi2IeP2M-Z6Vsi-eNeGxAA"><img src="foto\youtube.png"></a>
+              <a class="soc-net" href="https://discord.gg/U8QzVpVnDE"><img src="foto\steam.png"></a>
+              <a class="soc-net" href="https://vk.com/public212916411"><img src="foto\vk.png"></a>
+              <a class="soc-net" href="https://www.twitch.tv/gi_twich"><img src="foto\twitch.png"></a>
+              <a class="soc-net" href="https://t.me/+UA9zMUjTAX9jZDg6"><img src="foto\telegram.png"></a>
+            </div>
+            <div class="footer-description">
+              <div class="company-info">
+                <p>Наши магазины
+                  <ul>
+                    <li>Ст.метро "Каменная горка"</li>
+                    <li>Ст.метро "Пушкинская"</li>
+                    <li>Ст.метро "Немига"</li>
+                  </ul>
+                </p>
+              </div>
+              <div class="contacts">
+                <p>+375482344565</p>
+                <p>DuckBook@gmail.com</p>
+                <p>DuckBook</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div> 
 
-  </html>
+  <script src="localiz.js"></script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const userName = localStorage.getItem("userName");
+
+    // Если пользователь не авторизован, перенаправляем на страницу входа
+    if (!userName) {
+        window.location.href = 'form.html'; 
+    } else {
+        // Получаем данные о пользователе с сервера
+        fetch(`http://192.168.201.1:9999/user_info?nickname=${userName}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                // Если сервер вернул ошибку (например, 404 или 500)
+                throw new Error(`Ошибка HTTP: ${response.status}`);
+            }
+            return response.json(); // Преобразуем ответ в JSON
+        })
+        .then(data => {
+            if (data.status === 'success') {
+                const userInfo = data.data;
+
+                // Заполняем информацию о пользователе
+                document.getElementById('user-nickname').innerText = `Никнейм: ${userInfo.nickname}`;
+                document.getElementById('user-fname').innerText = `Имя: ${userInfo.fname}`;
+                document.getElementById('user-lname').innerText = `Фамилия: ${userInfo.lname}`;
+                document.getElementById('user-phone').innerText = `Телефон: ${userInfo.number}`;
+
+                // Показываем блок с информацией о пользователе
+                document.getElementById('userInfo').style.display = 'block'; // Показываем информацию
+            } else {
+                alert('Ошибка при получении данных о пользователе');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Произошла ошибка при запросе данных о пользователе');
+        });
+    }
+});
+
+  </script>
+</body>
+</html>

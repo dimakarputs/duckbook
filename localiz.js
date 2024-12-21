@@ -235,3 +235,19 @@ profile: "Profile",
     translator.setLanguage('en');
   });
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const logoutButton = document.querySelector('[data-translate="logout"]');
+  if (logoutButton) {
+    logoutButton.addEventListener('click', function () {
+      // Очистить данные о пользователе в localStorage
+      localStorage.removeItem("userLoggedIn");
+      localStorage.removeItem("userName");
+
+      // Перенаправить на страницу входа
+      window.location.href = 'innex.html';
+    });
+  }
+});
